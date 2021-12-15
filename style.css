@@ -152,6 +152,7 @@ img.equilibrium:hover {
 }
 @media (max-width: 31em) {
 	.main {
-		padding: 5.6rem 0;
+		height: 100vh;
+		padding: 12.8rem 0;
 	}
 }
