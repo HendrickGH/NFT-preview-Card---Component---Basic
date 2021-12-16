@@ -79,6 +79,7 @@ body {
 	color: #fff;
 	font-size: 1.4rem;
 	font-weight: 600;
+	transition: all 0.6s;
 }
 .text-info {
 	color: #8a929e;
@@ -117,6 +118,12 @@ body {
 }
 .author-name {
 	color: #fff;
+	transition: all 0.6s;
+}
+.author-name:hover,
+.title:hover {
+	color: #00fff7;
+	cursor: pointer;
 }
 /*ANIMATE IMG WHEN HOVER */
 .box-equilibrium {
@@ -133,7 +140,7 @@ img.equilibrium {
 	width: 100%;
 	border-radius: 0.8rem;
 	cursor: pointer;
-	transition: all 2s;
+	transition: all 0.5s;
 }
 img.equilibrium:hover {
 	opacity: 0.5;
@@ -144,7 +151,7 @@ img.equilibrium:hover {
 	bottom: 50%;
 	right: 50%;
 	transform: translate(50%, 50%);
-	transition: all 2s;
+	transition: all 0.5s;
 	pointer-events: none;
 }
 .equilibrium:hover + .icon-view {
@@ -156,3 +163,127 @@ img.equilibrium:hover {
 		padding: 12.8rem 0;
 	}
 }
+
+/* MODAL COMPONENT AND HOW IT WORKS, BELOW */
+.attribution {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	background-color: #fff;
+}
+.attribution a:link,
+.attribution a:visited {
+	color: #000;
+	font-weight: 700;
+	text-decoration: none;
+}
+.hendrick-info {
+	position: relative;
+	padding: 4.8rem;
+}
+.hendrick-details {
+	display: flex;
+	flex-direction: column;
+	gap: 1.8rem;
+}
+.socials {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+.social {
+	font-size: 1.8rem;
+}
+.close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translate(-50%, 50%);
+	background-color: transparent;
+	border: none;
+	font-size: 2.4rem;
+	cursor: pointer;
+	outline: none;
+}
+.close:focus {
+	box-shadow: 0 0 0 0.05rem #000;
+}
+.blur {
+	filter: blur(0.5rem);
+	pointer-events: none;
+}
+.opacity-medium {
+	opacity: 0.5;
+}
+.opacity-min {
+	opacity: 1;
+}
+/* MODAL MINI-PACKAGE */
+/* 
+You would put into parent element of your content site and put all HTML modal outside of parent element for good results🤗  
+And add main and blur class to parent element of your content so this javascript code 😏
+HAPPY CODING!
+Javascript code: 
+	<script>
+			const showContent = document.querySelector('.blur');
+			const btnClose = document.querySelector('.close');
+			const deleteModal = () => {
+				showContent.classList.remove('blur');
+				btnClose.parentElement.parentElement.remove();
+			};
+			btnClose.addEventListener('click', deleteModal);
+	</script>
+
+	
+Modal HTML code: 
+		<div class="attribution">
+			<div class="hendrick-info">
+				<button class="close">
+					<ion-icon name="close"></ion-icon>
+				</button>
+				<div class="hendrick-details">
+					<p>
+						Challenge by
+						<a
+							href="https://www.frontendmentor.io?ref=challenge"
+							target="_blank"
+						>
+							Frontend Mentor
+						</a>
+					</p>
+					<p class="hendrick">
+						Coded by
+						<a href="https://www.linkedin.com/in/hendrick-galarza/"
+							>Hendrick GH</a
+						>
+					</p>
+					<ul class="socials">
+						<li class="social">
+							<a href="https://github.com/HendrickGH"
+								><ion-icon name="logo-github"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="https://twitter.com/HendrickGalarza"
+								><ion-icon name="logo-twitter"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="tel:7721698485"><ion-icon name="call"></ion-icon></a>
+						</li>
+						<li class="social">
+							<a href="https://hendrickgh.netlify.app/"
+								><ion-icon name="globe"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="Currículum.pdf" download="cv-hendrick"
+								><ion-icon name="attach"></ion-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+*/

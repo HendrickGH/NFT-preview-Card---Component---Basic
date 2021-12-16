@@ -11,10 +11,12 @@
 			href="./images/favicon-32x32.png"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
 		<title>Frontend Mentor | NFT preview card component</title>
 	</head>
 	<body>
-		<main class="main">
+		<main class="main blur">
 			<div class="container">
 				<article class="card">
 					<figure class="box-equilibrium">
@@ -61,11 +63,80 @@
 				</article>
 			</div>
 		</main>
-		<!-- <div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
-		</div> -->
+		<div class="attribution">
+			<div class="hendrick-info">
+				<button class="close">
+					<ion-icon name="close"></ion-icon>
+				</button>
+				<div class="hendrick-details">
+					<p>
+						Challenge by
+						<a
+							href="https://www.frontendmentor.io?ref=challenge"
+							target="_blank"
+						>
+							Frontend Mentor
+						</a>
+					</p>
+					<p class="hendrick">
+						Coded by
+						<a href="https://www.linkedin.com/in/hendrick-galarza/"
+							>Hendrick GH</a
+						>
+					</p>
+					<ul class="socials">
+						<li class="social">
+							<a href="https://github.com/HendrickGH"
+								><ion-icon name="logo-github"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="https://twitter.com/HendrickGalarza"
+								><ion-icon name="logo-twitter"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="tel:7721698485"><ion-icon name="call"></ion-icon></a>
+						</li>
+						<li class="social">
+							<a href="https://hendrickgh.netlify.app/"
+								><ion-icon name="globe"></ion-icon
+							></a>
+						</li>
+						<li class="social">
+							<a href="Currículum.pdf" download="cv-hendrick"
+								><ion-icon name="attach"></ion-icon
+							></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			const showContent = document.querySelector('.blur');
+			const btnClose = document.querySelector('.close');
+			const deleteModal = () => {
+				showContent.classList.remove('blur');
+				btnClose.parentElement.parentElement.remove();
+			};
+			btnClose.addEventListener('click', deleteModal);
+			const title = document.querySelector('.title');
+			const author = document.querySelector('.author-name');
+			const img = document.querySelector('.equilibrium');
+			const iconView = document.querySelector('.icon-view');
+			const hover = () => {
+				img.classList.add('opacity-medium');
+				iconView.classList.add('opacity-min');
+			};
+			const hoverOut = () => {
+				img.classList.remove('opacity-medium');
+				iconView.classList.remove('opacity-min');
+			};
+			console.log(title);
+			title.addEventListener('mouseover', hover);
+			title.addEventListener('mouseout', hoverOut);
+			author.addEventListener('mouseover', hover);
+			author.addEventListener('mouseout', hoverOut);
+		</script>
 	</body>
 </html>
